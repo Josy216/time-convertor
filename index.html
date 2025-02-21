@@ -95,9 +95,9 @@
 
       btn1.addEventListener("click", function minuteConvertor() {
         togle.style.display = "block";
-        display.innerHTML = `${minute.value} minute is: ${
+        display.innerHTML = `${minute.value} minute is: ${(
           minute.value / 60
-        } hour or ${minute.value * 60} second. `;
+        ).toFixed(3)} hour or ${minute.value * 60} second. `;
       });
 
       btn0.addEventListener("click", function hourConvertor() {
@@ -109,9 +109,9 @@
 
       btn2.addEventListener("click", function secondConvertor() {
         togle.style.display = "block";
-        display.innerHTML = `${second.value} second is: ${
+        display.innerHTML = `${second.value} second is: ${(
           second.value / 3600
-        } hour or ${second.value / 60} minutes `;
+        ).toFixed(3)} hour or ${(second.value / 60).toFixed(3)} minutes `;
       });
     </script>
   </body>

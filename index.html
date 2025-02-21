@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Joseph"
+      content="minute to second calculator, minuteConvertor"
+    />
+
+    <title>min to second Convertor</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrapper {
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        box-shadow: 0 5px black;
+        padding: 50px;
+        text-align: center;
+      }
+      input,
+      button {
+        padding: 12px;
+        margin: 12px 0;
+        border: 0;
+        outline: 0;
+        text-align: center;
+        border-radius: 12px;
+        display: block;
+      }
+      button {
+        width: 60%;
+        background: #ff7200;
+        box-shadow: 0 2px black;
+      }
+      .display {
+        display: none;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1.4rem;
+        padding: 12px;
+        margin: 10px;
+      }
+
+      @media (max-width: 550px) {
+        .container {
+          margin-top: 50px;
+        }
+        .container,
+        input,
+        button {
+          text-align: center;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div>
+          <h1>Time Convertor</h1>
+
+          <input type="number" placeholder="Enter hours" id="hours" />
+          <input type="number" placeholder="Enter minute" id="minute" />
+          <input type="number" placeholder="Enter second" id="second" />
+          <button class="btn2">convert second</button>
+          <button class="btn1">convert minute</button>
+          <button class="btn0">convert hour</button>
+          <div class="display">
+            <p id="demo"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const minute = document.getElementById("minute");
+      const hours = document.getElementById("hours");
+      const second = document.getElementById("second");
+      const display = document.getElementById("demo");
+      const togle = document.querySelector(".display");
+      const btn0 = document.querySelector(".btn0");
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+
+      btn1.addEventListener("click", function minuteConvertor() {
+        togle.style.display = "block";
+        display.innerHTML = `${minute.value} minute is: ${
+          minute.value / 60
+        } hour or ${minute.value * 60} second. `;
+      });
+
+      btn0.addEventListener("click", function hourConvertor() {
+        togle.style.display = "block";
+        display.innerHTML = `${hours.value} hour is: ${
+          hours.value * 60
+        } minute or ${hours.value * 3600} seconds `;
+      });
+
+      btn2.addEventListener("click", function secondConvertor() {
+        togle.style.display = "block";
+        display.innerHTML = `${second.value} second is: ${
+          second.value / 3600
+        } hour or ${second.value / 60} minutes `;
+      });
+    </script>
+  </body>
+</html>
